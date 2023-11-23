@@ -2,10 +2,16 @@ package com.example.kotlin.covidapp.framework.views
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kotlin.covidapp.data.CovidAppRepository
 import com.example.kotlin.covidapp.data.network.model.CovidAppBase
 import com.example.kotlin.covidapp.databinding.ActivityMainBinding
 import com.example.kotlin.covidapp.framework.adapters.CovidAppAdapter
+import com.example.kotlin.covidapp.utils.Constants
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity: Activity() {
 
@@ -35,6 +41,13 @@ class MainActivity: Activity() {
         return result
     }
 
+    private fun getPokemonList(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val pokemonRepository = CovidAppRepository()
+            val result:CovidAppBase? = pokemonRepository.getCovidList(Constants.MAX_INFO_COUNTRY)
+            Log.d("Salida", result?.count.toString())
+        }
+    }
 
     private fun setUpRecyclerView(dataForList:ArrayList<CovidAppBase>){
         binding.RVCovid.setHasFixedSize(true)
