@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:cardCornerRadius="8dp"
+    android:cardBackgroundColor="#888888"
+    android:elevation="4dp"
+    android:useCompatPadding="true"
     >
 
-    <ImageView        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_gravity="center"
-        android:id="@+id/IVPhoto"
-        />
-    <TextView        android:layout_width="match_parent"
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:gravity="center"
         android:layout_marginTop="16dp"
-        android:text="Nombre"
-        android:id="@+id/TVName"
-        />
-</LinearLayout>
+        android:text="País"
+        android:id="@+id/TVName"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Región"
+        android:id="@+id/TVRegion"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Fecha"
+        android:id="@+id/TVDate"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
