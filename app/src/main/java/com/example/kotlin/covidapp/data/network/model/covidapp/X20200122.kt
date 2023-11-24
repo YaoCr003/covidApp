@@ -1,6 +1,6 @@
 package com.example.kotlin.covidapp.data.network.model.covidapp
 
-data class CovidApp(
-    val info: Info,
-    val item: List<Item>
+data class X20200122(
+    val new: Int,
+    val total: Int
 )

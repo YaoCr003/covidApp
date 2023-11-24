@@ -17,6 +17,5 @@ object NetworkModuleDI {
             .addConverterFactory(gsonFactory)
             .build()
             .create(CovidAPIService::class.java)
-
     }
 }
